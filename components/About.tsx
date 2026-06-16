@@ -1,8 +1,20 @@
 import Image from "next/image";
 import companyImage from "../assets/about.webp";
 import logo from "../assets/logo.png";
+import cdakbBadge from "../assets/CDAKB.png";
 
 const legalitas = ["NIB : 0220002352246", "S-IDAK 02200023522460003", "NPWP : 94.718.948.6-323.000"];
+
+const parseLegal = (item: string) => {
+  if (item.includes(" : ")) {
+    return item.split(" : ");
+  }
+  const firstSpaceIndex = item.indexOf(" ");
+  if (firstSpaceIndex !== -1) {
+    return [item.substring(0, firstSpaceIndex), item.substring(firstSpaceIndex + 1)];
+  }
+  return [item, ""];
+};
 
 export default function About() {
   return (
@@ -58,35 +70,67 @@ export default function About() {
         </div>
 
         {/* Legalitas */}
-        <div className="mt-20">
+        <div className="mt-24 border-t border-gray-200 pt-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
+            
+            {/* Kiri: Deskripsi & Daftar Legalitas */}
+            <div className="lg:col-span-2">
+              <span className="text-blue-600 font-bold text-sm uppercase tracking-wider">
+                Legalitas Perusahaan
+              </span>
 
-          <span className="text-blue-600 font-semibold">
-            Legalitas Perusahaan
-          </span>
+              <h3 className="text-3xl font-extrabold text-gray-900 mt-2 mb-4">
+                Izin Resmi dan Kepatuhan Regulasi
+              </h3>
 
-          <h3 className="text-2xl font-bold mt-2">
-            Izin Resmi dan Kepatuhan Regulasi
-          </h3>
+              <p className="text-gray-500 text-sm leading-relaxed mb-8 max-w-xl">
+                Sebagai distributor resmi, kami berkomitmen penuh untuk menjalankan operasional perusahaan secara legal dan profesional, sesuai dengan regulasi kesehatan nasional yang berlaku di Indonesia.
+              </p>
 
-          <p className="text-gray-500 mb-10">
-            Kami menjalankan operasional perusahaan sesuai standar dan regulasi yang berlaku untuk memastikan keamanan, kualitas layanan, serta kepercayaan pelanggan.
-          </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {legalitas.map((item) => {
+                  const [title, value] = parseLegal(item);
+                  let displayTitle = title;
+                  if (title === "NIB") displayTitle = "Nomor Induk Berusaha";
+                  if (title === "S-IDAK") displayTitle = "Sertifikat Distribusi";
+                  if (title === "NPWP") displayTitle = "NPWP Perusahaan";
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
-
-            {legalitas.map((item) => (
-              <div
-                key={item}
-                className="bg-white rounded-2xl shadow-md h-32 flex items-center justify-center border px-6 border-gray-300"
-              >
-                <span className="font-bold text-xl">
-                  [{item}]
-                </span>
+                  return (
+                    <div
+                      key={item}
+                      className="border-l-2 border-blue-500 pl-4 py-1.5"
+                    >
+                      <span className="text-xs font-bold text-gray-400 uppercase tracking-wider block">
+                        {displayTitle} ({title})
+                      </span>
+                      <span className="font-mono text-gray-800 text-sm font-bold mt-1 block">
+                        {value}
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
-            ))}
+            </div>
+
+            {/* Kanan: Sorotan Sertifikasi CDAKB */}
+            <div className="lg:col-span-1 bg-white rounded-3xl p-8 border border-gray-200 shadow-sm flex flex-col items-center text-center">
+              <div className="w-28 h-28 relative mb-6 flex items-center justify-center">
+                <Image
+                  src={cdakbBadge}
+                  alt="Sertifikasi CDAKB"
+                  className="object-contain"
+                  style={{ width: "auto", height: "auto" }}
+                />
+              </div>
+              <h4 className="font-bold text-gray-900 text-lg mb-2">
+                Sertifikasi CDAKB
+              </h4>
+              <p className="text-gray-500 text-xs leading-relaxed max-w-xs">
+                Kami telah memenuhi standar kelayakan <strong>Cara Distribusi Alat Kesehatan yang Baik (CDAKB)</strong> resmi dari Kementerian Kesehatan Republik Indonesia.
+              </p>
+            </div>
 
           </div>
-
         </div>
 
       </div>
