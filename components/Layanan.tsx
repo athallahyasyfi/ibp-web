@@ -46,8 +46,7 @@ export default function Layanan() {
                         Layanan
                     </h2>
                     <p className="text-gray-500 max-w-2xl mx-auto">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry's standard dummy text.
+                        Kami menyediakan layanan distribusi alat kesehatan dan laboratorium dengan dukungan produk berkualitas, konsultasi kebutuhan, serta pelayanan profesional untuk membantu memenuhi kebutuhan rumah sakit, klinik, laboratorium, institusi pendidikan, dan fasilitas kesehatan lainnya.
                     </p>
                 </div>
 

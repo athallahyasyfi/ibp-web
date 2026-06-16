@@ -2,7 +2,7 @@ import Image from "next/image";
 import companyImage from "../assets/about.webp";
 import logo from "../assets/logo.png";
 
-const legalitas = ["NIB", "IPAAK", "NPWP"];
+const legalitas = ["NIB : 0220002352246", "S-IDAK 02200023522460003", "NPWP : 94.718.948.6-323.000"];
 
 export default function About() {
   return (
@@ -37,9 +37,9 @@ export default function About() {
             </h2>
 
             <p className="text-gray-500 leading-7">
-              Lorem Ipsum is simply dummy text of the printing and
-              typesetting industry. Lorem Ipsum has been the
-              industry standard dummy text ever since the 1960s.
+              Berbasis di Bandar Lampung, PT. Ideaa Budi Perkasa hadir sebagai mitra terpercaya dalam pengadaan dan distribusi alat kesehatan. Sejak tahun 2020, kami menyediakan berbagai peralatan medis berkualitas untuk rumah sakit, klinik, dan fasilitas kesehatan dengan standar pelayanan yang profesional, cepat, dan terpercaya.
+
+              Kami percaya bahwa ketersediaan alat kesehatan yang tepat dan berkualitas merupakan kunci dalam mendukung pelayanan kesehatan yang optimal bagi masyarakat.
             </p>
 
           </div>
@@ -69,7 +69,7 @@ export default function About() {
           </h3>
 
           <p className="text-gray-500 mb-10">
-            Neque porro quisquam est qui dolorem ipsum sit amet.
+            Kami menjalankan operasional perusahaan sesuai standar dan regulasi yang berlaku untuk memastikan keamanan, kualitas layanan, serta kepercayaan pelanggan.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">

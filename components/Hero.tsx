@@ -1,8 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import heroImage from "../assets/hero.png";
 import bioLogo from "../assets/bio.png";
 import geaLogo from "../assets/gea.png";
 import mindrayLogo from "../assets/mindray.png";
+import onehealthLogo from "../assets/onehealth.png"
+import comenLogo from "../assets/comen.png"
 
 export default function Hero() {
   return (
@@ -19,18 +22,23 @@ export default function Hero() {
             </h1>
 
             <p className="text-gray-500 text-base md:text-lg mb-8">
-              Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
-              consectetur adipisicing elit.
+              Menyediakan alat kesehatan, peralatan laboratorium, dan kebutuhan medis berkualitas dari berbagai brand terpercaya untuk rumah sakit, klinik, laboratorium, instansi, dan fasilitas kesehatan di seluruh Lampung.
             </p>
 
             <div className="flex gap-4">
-              <button className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition cursor-pointer">
+              <Link
+                href="/produk"
+                className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition cursor-pointer font-semibold text-center flex items-center justify-center"
+              >
                 Lihat Product
-              </button>
+              </Link>
 
-              <button className="border border-gray-300 px-6 py-3 rounded-lg hover:bg-white transition cursor-pointer">
+              <Link
+                href="/#kontak"
+                className="border border-gray-300 px-6 py-3 rounded-lg hover:bg-white transition cursor-pointer font-semibold text-center flex items-center justify-center text-gray-700"
+              >
                 Minta Penawaran
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -70,6 +78,17 @@ export default function Hero() {
             <Image
               src={mindrayLogo}
               alt="Mindray"
+              className="h-12 md:h-14 w-auto object-contain brightness-0 invert opacity-90"
+            />
+
+            <Image
+              src={onehealthLogo}
+              alt="onehealth"
+              className="h-12 md:h-14 w-auto object-contain brightness-0 invert opacity-90"
+            />
+            <Image
+              src={comenLogo}
+              alt="comen"
               className="h-12 md:h-14 w-auto object-contain brightness-0 invert opacity-90"
             />
 

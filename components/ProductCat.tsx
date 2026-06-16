@@ -5,27 +5,32 @@ import {
   HeartHandshake,
   Download,
 } from "lucide-react";
+import Link from "next/link";
 
 const kategori = [
   {
     icon: Package,
     title: "Consumable",
     desc: "Bahan Medis Habis Pakai (BMHP) laboratorium dan alat kesehatan.",
+    slug: "consumable",
   },
   {
     icon: Microscope,
     title: "IVD Instrument",
     desc: "Rangkaian instrumen laboratorium In Vitro Diagnostic (IVD).",
+    slug: "ivd-instrument",
   },
   {
     icon: FlaskConical,
     title: "IVD Reagent",
     desc: "Reagen laboratorium klinik dan patologi anatomi.",
+    slug: "ivd-reagent",
   },
   {
     icon: HeartHandshake,
     title: "Rehabilitation & Assistive Devices",
     desc: "Alat bantu pemulihan dan rehabilitasi medis.",
+    slug: "rehabilitation-assistive-devices",
   },
 ];
 
@@ -99,19 +104,19 @@ export default function ProductCategory() {
                   {item.desc}
                 </p>
 
-                <a
-                  href="#"
+                <Link
+                  href={`/produk/${item.slug}`}
                   className="text-blue-500 font-medium hover:text-blue-700"
                 >
                   Lihat Katalog Lengkap →
-                </a>
+                </Link>
               </div>
             );
           })}
         </div>
 
         {/* Download Brosur */}
-        <div className="mt-20 bg-blue-500 rounded-3xl p-10 text-white shadow-xl">
+        <div id="download-brosur" className="mt-20 bg-blue-500 rounded-3xl p-10 text-white shadow-xl scroll-mt-10">
 
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
 

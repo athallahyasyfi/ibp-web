@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import About from '@/components/About'
 import ProductCat from '@/components/ProductCat'
 import Layanan from '@/components/Layanan'
+import Artikel from '@/components/Artikel'
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
         <About />
         <ProductCat />
         <Layanan />
+        <Artikel />
       </main>
       <Footer />
     </>
