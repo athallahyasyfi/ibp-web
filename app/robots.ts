@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/studio", "/api/"],
       },
     ],
-    sitemap: "https://ideaabudiperkasa.com/sitemap.xml",
+    sitemap: "https://www.ideaabudiperkasa.com/sitemap.xml",
   };
 }

@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { getCategories } from "@/lib/sanity";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://ideaabudiperkasa.com";
+  const baseUrl = "https://www.ideaabudiperkasa.com";
 
   // Static routes
   const routes = [
